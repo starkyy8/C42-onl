@@ -66,23 +66,24 @@ public class Homework3 {
     public static void getSum(){
         Scanner input = new Scanner(System.in);
         System.out.println("Введите целое положительное число: ");
-        String value = input.nextLine();
-        int inputNumber = Integer.parseInt(value);
 
-        if (inputNumber < 0) {
-            System.out.println("Ведено неверное число.");
+        if (input.hasNextInt() ) {
+            int value = input.nextInt();
+            if (value > 0){
+                int a = 1;
+                int b = 1;
+                while (a <= value - 1) {
+                    a++;
+                    b = b + a;
+                }
+                    System.out.println("Сумма чисел от 1 до " + value + " равна - " + b);
+            }
+            else {
+                System.out.println("Ведено неверное число.");
+            }
         }
-
-        /*for (int i = 0; i <= inputNumber; i++){
-            int sequence;
-            System.out.println(i);
-        }*/
-        int a = 1;
-        int b = 0;
-        while (a <= inputNumber - 1 ){
-            a++;
-            b = b + a;
-            System.out.println(b);
+        else {
+            System.out.println("Ведено неверное число.");
         }
     }
 }
