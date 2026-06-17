@@ -69,7 +69,7 @@ public class Homework3 {
 
         if (input.hasNextInt() ) {
             int value = input.nextInt();
-            if (value > 0){
+            if (value >= 0){
                 int a = 1;
                 int b = 1;
                 while (a <= value - 1) {
