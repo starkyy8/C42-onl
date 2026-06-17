@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MyArray {
-    public class Main {
+
         public static void main(String[] args) {
             //getForwardAndReversArray();
             findIncreasing();
@@ -177,5 +177,5 @@ public class MyArray {
             }
             System.out.println("Массив возрастающий");
         }
-    }
+
 }
