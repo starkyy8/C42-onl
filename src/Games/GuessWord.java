@@ -1,3 +1,5 @@
+package Games;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -116,7 +118,7 @@ public class GuessWord {
         if (userInput.trim().toLowerCase().equalsIgnoreCase("Да")) {
             tryToGuess();
         } else {
-            System.out.println("Спасибо за игру. До свидания!");
+            System.out.println("Прощайте. До свидания!");
 
         }
     }
