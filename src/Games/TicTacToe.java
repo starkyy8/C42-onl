@@ -1,6 +1,5 @@
 package Games;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,14 +29,13 @@ public class TicTacToe {
         Boolean whoStartTurn = random.nextBoolean();
 
             if(whoStartTurn){
-                //turnHuman();
                 System.out.println("Начинает человек!");
             }else {
-                //turnIA();
                 System.out.println("Начинает ИИ!");
             }
         while (true){
             printTable();
+            System.out.println("-".repeat(50));
 
             if(whoStartTurn){
                 turnHuman();
@@ -59,8 +57,6 @@ public class TicTacToe {
                 System.out.println("Ничья!");
                 break;
             }
-
-
         }
         newGame();
     }
@@ -72,29 +68,27 @@ public class TicTacToe {
             }
         }
     }
-
     public static void turnHuman(){
         int x, y;
         do {
             System.out.println("Введите координаты (0...2):");
             x = scanner.nextInt();
             y = scanner.nextInt();
-        }while (!isCellValid(x, y));
+        }while (isCellValid(x, y));
         playField[x][y] = player1;
     }
     public static boolean isCellValid(int x, int y){
         if(x < 0 || y < 0 || x >= 3 || y >= 3){
             return false;
         }
-        return playField[x][y] == '.';
+        return playField[x][y] != '.';
     }
-
     public static void turnIA(){
         int x, y;
         do {
             x = random.nextInt(3);
             y = random.nextInt(3);
-        }while (!isCellValid(x, y));
+        }while (isCellValid(x, y));
         playField[x][y] = player2;
     }
     public static boolean checkWin(char dot){
@@ -102,7 +96,6 @@ public class TicTacToe {
             if((playField[i][0] == dot && playField[i][1] == dot &&
                 playField[i][2] == dot) || (playField[0][i] == dot &&
                 playField[1][i] == dot && playField[2][i] == dot))
-
                 return true;
             if ((playField[0][0] == dot && playField[1][1] == dot &&
                  playField[2][2] == dot) || (playField[2][0] == dot &&

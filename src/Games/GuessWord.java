@@ -41,15 +41,11 @@ public class GuessWord {
             System.out.println("Введите букву или попробуйте угадать все слово сразу.");
             System.out.print("Загаданное слово - ");
             System.out.println(secretWordChar);
-
             String userInput = new Scanner(System.in).nextLine();
             if (userInput.isEmpty()){
                 System.out.println("Вы ввели пустое значение, попробуйте еще раз.");
                 continue;
             }
-            //System.out.println("Вы ввели - " + userInput.trim().toLowerCase());
-
-
             if(userInput.length() > 1){
                 if(userInput.equals(secretWord)){
                     System.out.println("Поздравляю! Вы угадали слово - " + secretWord + " !");
@@ -67,7 +63,6 @@ public class GuessWord {
             }
 
             char letter = userInput.charAt(0);
-
             boolean found = false;
 
             for (int index = 0; index < secretWord.length(); index++){
@@ -76,8 +71,6 @@ public class GuessWord {
                     found = true;
                 }
             }
-
-
             if (found){
                 System.out.println("Буква " + letter + " есть в слове. Осталось попыток - " + attempts);
                 boolean allOpened = true;
@@ -100,16 +93,9 @@ public class GuessWord {
                     System.out.println("Загаданное слово было - " + secretWord);
                 }
             }
-
-            
-
-
         }while (attempts > 0);
         getRandomWord();
         tryNewGame();
-
-
-
     }
     public static void tryNewGame() {
 
