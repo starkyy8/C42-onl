@@ -17,7 +17,7 @@ public class MyMain {
         Scanner scanner = new Scanner(System.in);
         getChoice(scanner);
         System.out.println("Желаете повторить конвертирование?(Да/Нет)");
-        String repeatAnswer = new Scanner(System.in).nextLine();
+        String repeatAnswer = scanner.nextLine();
         if (repeatAnswer.equalsIgnoreCase("Да")){
             startProgram();
         }else {
@@ -177,7 +177,6 @@ public class MyMain {
                 } catch (IOException e) {
                     System.err.println("Ошибка записи в файл: " + e.getMessage());
                 }
-
                 break;
             }else {
                 String wrong = scanner.next();
